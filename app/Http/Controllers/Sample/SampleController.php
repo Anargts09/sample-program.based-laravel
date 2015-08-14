@@ -2,25 +2,23 @@
 
 namespace App\Http\Controllers\Sample;
 
-use App\Http\Controllers\Controller;
-use Redis;
-use Debugbar;
+use App\Http\Controllers\AppController;
 
-class SampleController extends Controller
+class SampleController extends AppController
 {
 	public function index()
 	{
-		Redis::set('name', 'alegriaghost');
-		$name = Redis::get('name');
-		Redis::del('name');
-		Debugbar::info($name);
-		Debugbar::warning($name);
-		Debugbar::error($name);
-		Debugbar::addMessage($name, '$name');
+		\Redis::set('name', 'alegriaghost');
+		$name = \Redis::get('name');
+		\Redis::del('name');
+		\Debugbar::info($name);
+		\Debugbar::warning($name);
+		\Debugbar::error($name);
+		\Debugbar::addMessage($name, '$name');
 		var_dump($name);
-		Redis::set('name1', 'alegriaghost1');
-		Redis::set('name2', 'alegriaghost2');
-		Redis::set('name3', 'alegriaghost3');
+		\Redis::set('name1', 'alegriaghost1');
+		\Redis::set('name2', 'alegriaghost2');
+		\Redis::set('name3', 'alegriaghost3');
 		$list = Redis::keys('*');
 		$values = Redis::mget($list);
 		var_dump($list);
@@ -34,7 +32,7 @@ class SampleController extends Controller
 			'user_name' => 'alegriaghost react',
 			'address' => 'Shiga JP',
 		];
-		Debugbar::info($users);
+		\Debugbar::info($users);
 
 		return \Response::json($users);
 	}
@@ -46,7 +44,7 @@ class SampleController extends Controller
 			'user_name' => 'alegriaghost riot',
 			'address' => 'Shiga JP',
 		];
-		Debugbar::info($users);
+		\Debugbar::info($users);
 
 		return \Response::json($users);
 	}

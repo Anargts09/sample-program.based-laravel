@@ -25,3 +25,9 @@ Route::get('riot-sample', function () {
 Route::get('redis', 'Sample\SampleController@index');
 Route::get('react', 'Sample\SampleController@react');
 Route::get('riot', 'Sample\SampleController@riot');
+
+Route::get('riot/riot', function () {
+    return view('riot.index');
+});
+Route::get('riot-api', 'Sample\RiotController@riotApi');
+Route::get('riot-api2', 'Sample\RiotController@riotApi2');
