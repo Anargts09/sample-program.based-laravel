@@ -87,9 +87,6 @@
 <version>
     <yield />
     <span>{version}</span>
-    <style type="text/cssParse">
-        .@cssParse {background-color: #ac2525;}
-    </style>
     <script>
         this.version = riot.version;
 
@@ -98,3 +95,18 @@
         }
     </script>
 </version>
+
+<css-parse>
+    <yield />
+    <style type="text/cssParse">
+        @cssParse > p {background-color: #ac2525;}
+    </style>
+</css-parse>
+
+<js-parse>
+    <yield />
+    <p>{jsparse}</p>
+    <script type="text/jsParse">
+        this.jsparse = '@jsParse';
+    </script>
+</js-parse>

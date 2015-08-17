@@ -13,6 +13,10 @@
     <hr>
     <div class="version2"><p>別Class指定(mountされない)</p></div>
     <hr>
+    <css-parse><p>CSS Parse</p></css-parse>
+    <hr>
+    <js-parse><p>JS Parse</p></js-parse>
+    <hr>
 
     <script src="/laravel/tag/riot.tag" type="riot/tag"></script>
     <script src="https://cdn.jsdelivr.net/g/riot@2.2(riot.min.js+compiler.min.js)"></script>
@@ -23,9 +27,15 @@
         // クラス名でmount
         riot.mount('.version', 'version');
         // CSS Parse
+        riot.mount('css-parse');
         riot.parsers.css.cssParse = function(tag, css) {
             return css.replace(/@cssParse/, tag);
         };
-/    </script>
+        // JS Parse
+        riot.mount('js-parse');
+        riot.parsers.js.jsParse = function(js) {
+            return js.replace(/@jsParse/, 'じぇいえすぱーす');
+        }
+    </script>
 </body>
 </html>
