@@ -110,3 +110,52 @@
         this.jsparse = '@jsParse';
     </script>
 </js-parse>
+
+<car>
+    <yield />
+    <script>
+        function Car() {
+            riot.observable(this);
+
+            this.on('start', function() {
+                console.log('Car');
+            });
+        }
+
+//        var car = new Car();
+//        car.trigger('start');
+
+//        var child = new Car();
+//        child.on('start', function() {
+//            console.log('Child Car');
+//        });
+//        child.trigger('start');
+//        child.trigger('start');
+
+//        var multi = new Car();
+//        multi.on('start stop', function(type) {
+//            console.log('Multi Car [' + type + ']');
+//        });
+//        multi.trigger('start');
+//        multi.trigger('stop');
+//        multi.off('start stop');
+//        multi.trigger('start');
+//        multi.trigger('stop');
+
+//        var once = new Car();
+//        once.one('start', function() {
+//            console.log('Once Car');
+//        });
+//        once.trigger('start');
+//        once.trigger('start');
+
+        var opt = new Car();
+        opt.on('start', function(obj, str, arr) {
+            console.log('Option Car');
+            console.log(obj);
+            console.log(str);
+            console.log(arr);
+        });
+        opt.trigger('start', {obj1: 'object1', obj2: 'object2'}, 'string', ['arr1', 'arr2']);
+    </script>
+</car>

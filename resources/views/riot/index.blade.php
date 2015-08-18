@@ -17,6 +17,8 @@
     <hr>
     <js-parse><p>JS Parse</p></js-parse>
     <hr>
+    <div riot-tag="car">Car</div>
+    <hr>
 
     <script src="/laravel/tag/riot.tag" type="riot/tag"></script>
     <script src="https://cdn.jsdelivr.net/g/riot@2.2(riot.min.js+compiler.min.js)"></script>
@@ -36,6 +38,8 @@
         riot.parsers.js.jsParse = function(js) {
             return js.replace(/@jsParse/, 'じぇいえすぱーす');
         }
+        // Observable(Car)
+        riot.mount('car');
     </script>
 </body>
 </html>
