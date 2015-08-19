@@ -9,5 +9,7 @@
     <p><a href="/laravel/riot-sample">Riot Sample</a></p>
     <hr>
     <p><a href="/laravel/riot/riot">Riot</a></p>
+    <hr>
+    <p><a href="/laravel/riot-html">Riot Html Sample</a></p>
 </body>
 </html>

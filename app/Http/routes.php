@@ -36,8 +36,14 @@ Route::get('riot-route', [
     'as'   => 'riot-route-name',
 ]);
 
+Route::get('riot-html', [
+    'uses' => 'Riot\RiotHtmlController@index',
+    'as'   => 'riot-html',
+]);
+
 // API用
 Route::group(['prefix' => 'api'], function() {
     Route::resource('riot-user', 'Api\RiotUserController');
     Route::resource('riot2', 'Api\Riot2Controller');
+    Route::resource('riot-html', 'Api\RiotHtmlController');
 });
