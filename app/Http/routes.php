@@ -31,3 +31,13 @@ Route::get('riot/riot', function () {
 });
 Route::get('riot-api', 'Sample\RiotController@riotApi');
 Route::get('riot-api2', 'Sample\RiotController@riotApi2');
+Route::get('riot-route', [
+    'uses' => 'Sample\RiotController@riotRoute',
+    'as'   => 'riot-route-name',
+]);
+
+// API用
+Route::group(['prefix' => 'api'], function() {
+    Route::resource('riot-user', 'Api\RiotUserController');
+    Route::resource('riot2', 'Api\Riot2Controller');
+});

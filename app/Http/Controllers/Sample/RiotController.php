@@ -6,6 +6,8 @@ use App\Http\Controllers\AppController;
 
 class RiotController extends AppController
 {
+	protected $url;
+
 	public function riotApi()
 	{
 		$general = [
@@ -23,5 +25,10 @@ class RiotController extends AppController
 		];
 
 		return \Response::json($version);
+	}
+
+	public function riotRoute()
+	{
+
 	}
 }
